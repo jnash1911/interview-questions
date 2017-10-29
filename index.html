@@ -1,0 +1,71 @@
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<h2>Chess Question</h2>
+<p>We are going to build a chess game. These questions are designed to specifically test your understanding of inheritance, scope, embedded loops, and if you can think in code.<br>
+You'll be asked to use psuedo code, so the language isn't important.</p>
+<ol>
+  <li>Provided in front of you is a list of classes we have used to start organizing the information needed to get started.<br>
+    How would you complete the "piece class" and beyond?<br>
+    <img src="img/classDiagram.svg" />
+    <span>NOTE: If they complete the info for the piece class and stop, prod them to "keep going"</span>
+    <div class="gradingCriteria">
+      <h3>(GRADING CRITERIA)</h3>
+        <ol>
+          <li>No subclasses present and needs lots of help</li>
+          <li>With a little help, they list methods and attributes for "piece class" only (no subclasses present)</li>
+          <li>They list subclasses but can't fill in all the methods and attributes.</li>
+          <li>They list all related attributes and methods for piece class and subclasses for each piece and both players.</li>
+        </ol>
+      </div>
+  </li>
+  <li>To find where a player can move, we have started a method named "spotOccupiedByOpponent()" using pseudo code, complete the method:
+      <pre>spotOccupiedByOpponent(intX, intY){<span>
+        get Array of opponent's pieces
+          forEach(opponent piece){
+            get that piece's location
+          if(opponent piece X === intX && opponent piece Y === intY){
+            return true;
+          }
+        }</span>
+      }</pre><br>
+      <div class="gradingCriteria">
+        <h3>(GRADING CRITERIA)</h3>
+        <ol>
+          <li>Can't write or explain how it works, even with help.</li>
+          <li>Can explain how it works with a lot of help.</li>
+          <li>Can write and explain with a little help.</li>
+          <li>Can write and explain with no help</li>
+        </ol>
+      </div>
+  </li>
+  <li>We have begun another method to find the available moves for a Knight.<br>
+    Using pseudo code, complete the method:
+    <pre>availableMovesForKnight(){
+      <span>get knightCurrentLocation;
+        get howKnightMoves;
+          (knightCurrentLocation + howKnightMoves) push each X,Y to moveableSpotsArray;
+        forEach(moveable spot){
+            if(spot is occupied by a piece of mine)
+            remove from Array
+          }
+          return Array
+        }</span>
+    }</pre>
+    <div class="gradingCriteria">
+    <h3>(GRADING CRITERIA)</h3>
+      <ol>
+        <li>Can't write or explain how it works, even with help.</li>
+        <li>Can explain how it works with a lot of help.</li>
+        <li>Can write and explain with a little help.</li>
+        <li>Can write and explain with no help</li>
+      </ol>
+    </div>
+  </li>
+</ol>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
