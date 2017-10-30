@@ -11,7 +11,8 @@
 "Ways to help" questions are to be asked if candidate is stuck. Wait for them to answer, only if they can't, give them the answer that goes with that question.<br>
 <strong>NOTE:</strong> If you provide that answer, they will be penalized in the points system.</span></p>
 <ol>
-  <li class="quest"><span>(10 min)</span>We are going to start our chess program, on the whiteboard, show us how you would organize the methods/functions and attributes of all the pieces on the board.<br>
+  <li class="quest"><span>(10 min)</span>We are going to start our chess program.<br>
+    On the whiteboard, show us how you would organize the methods/functions and attributes of all the pieces on the board (ignore any other classes. Focus on "piece".).<br>
     <div class="gradingCriteria">
       <h3>(GRADING CRITERIA)</h3>
       <h4>Ways to help:</h4>
@@ -25,16 +26,17 @@
         </ol>
       </div>
     </li>
-    <li class="quest"><span>(5 min)</span>To find where a player can move, we have started a method named "spotOccupiedByMyPieces()" using pseudo code, complete the method (return a boolean):
-      <pre>spotOccupiedByMyPieces(intX, intY){<span>
-        get Array of my pieces
+    <li class="quest"><span>(5 min)</span>To find where a player can move, we have started a method named "spotOccupiedByMyPieces()" using pseudo code, complete the method:
+      <pre>isSpotOccupiedByMyPieces(intX, intY){<span>
+        get all of my pieces
           forEach(piece){
             get that piece's location
           if(my piece X equals intX and my piece Y equals intY){
             return true;
           }
         }</span>
-      }</pre><br>
+      }</pre>
+      <img src="img/newchess.png" />
       <div class="gradingCriteria">
         <h3>(GRADING CRITERIA)</h3>
         <h4>Ways to help</h4>
@@ -49,15 +51,15 @@
       </div>
   </li>
   <li class="quest"><span>(10-15 min)</span>We have begun another method to find the available moves for a Knight.<br>
-    Using pseudo code, complete the method (return an Array):
+    Using pseudo code, complete the method:
     <pre>availableMovesForKnight(){
       <span>get knight's current location;
         get how the knight moves;
         is move on the board;
-          (knight's current location + how the knight moves) push each X,Y to moveable spots Array;
+          (knight's current location + how the knight moves) push each X,Y to moveable spots;
             forEach(moveable spot){
-              if(spotOccupiedByMyPieces())
-              remove from moveable spots Array
+              if(isSpotOccupiedByMyPieces())
+              remove from moveable spots
           }
           return moveable spots Array
         }</span>
