@@ -4,66 +4,84 @@
 </head>
 <body>
 <h2>Chess Question</h2>
-<p>We are going to build a chess game. These questions are designed to specifically test your understanding of inheritance, scope, embedded loops, and if you can think in code.<br>
-You'll be asked to use psuedo code, so the language isn't important.</p>
+<p>We are going to build a chess game. These questions are designed to specifically test your understanding of inheritance, scope, embedded loops, and if you can think in code. You'll be asked to use psuedo code, so the language isn't important.</p>
+<p>At a base level, chess is a game with two players, a set of pieces that have prescribed moves, a board with positions that can be represented by X and Y coordinates.</p>
+<p><strong>NOTE:</strong> Answers could potentially build from previous answers.</p>
+<p><span><strong>POINTS SYSTEM:</strong> Points are described below with a number starting with the worst answer to the best.<br>
+"Ways to help" questions are to be asked if candidate is stuck. Wait for them to answer, only if they can't, give them the answer that goes with that question.<br>
+<strong>NOTE:</strong> If you provide that answer, they will be penalized in the points system.</span></p>
 <ol>
-  <li>Provided in front of you is a list of classes we have used to start organizing the information needed to get started.<br>
-    How would you complete the "piece class" and beyond?<br>
-    <img src="img/classDiagram.svg" />
-    <span>NOTE: If they complete the info for the piece class and stop, prod them to "keep going"</span>
+  <li class="quest"><span>(10 min)</span>We are going to start our chess program, on the whiteboard, show us how you would organize the methods/functions and attributes of all the pieces on the board.<br>
     <div class="gradingCriteria">
       <h3>(GRADING CRITERIA)</h3>
+      <h4>Ways to help:</h4>
+      <p>How would you represent each different piece? <span>You could create a subclass for each piece.</span><br>
+      What kind of operations do you think each piece would need to have? <span>"How a piece moves method", "available moves method" and "XY coordinates"</span></p>
         <ol>
-          <li>No subclasses present and needs lots of help</li>
-          <li>With a little help, they list methods and attributes for "piece class" only (no subclasses present)</li>
-          <li>They list subclasses but can't fill in all the methods and attributes.</li>
-          <li>They list all related attributes and methods for piece class and subclasses for each piece and both players.</li>
+          <li>Can't write or explain how it works, after you answered both help questions.</li>
+          <li>Can explain how it works, after you answered both help questions.</li>
+          <li>Can write and explain how it works, after you answered one help question.</li>
+          <li>They list all related attributes and methods for "piece class" and subclasses for each piece, with no help.</li>
         </ol>
       </div>
-  </li>
-  <li>To find where a player can move, we have started a method named "spotOccupiedByOpponent()" using pseudo code, complete the method:
-      <pre>spotOccupiedByOpponent(intX, intY){<span>
-        get Array of opponent's pieces
-          forEach(opponent piece){
+    </li>
+    <li class="quest"><span>(5 min)</span>To find where a player can move, we have started a method named "spotOccupiedByMyPieces()" using pseudo code, complete the method (return a boolean):
+      <pre>spotOccupiedByMyPieces(intX, intY){<span>
+        get Array of my pieces
+          forEach(piece){
             get that piece's location
-          if(opponent piece X === intX && opponent piece Y === intY){
+          if(my piece X equals intX and my piece Y equals intY){
             return true;
           }
         }</span>
       }</pre><br>
       <div class="gradingCriteria">
         <h3>(GRADING CRITERIA)</h3>
+        <h4>Ways to help</h4>
+        <p>What do you need to get started? <span>Find all my pieces.</span><br>
+        What steps would you take after you get what you need? <span>Go through all your pieces and check the XY against the given coordinates.</span></p>
         <ol>
-          <li>Can't write or explain how it works, even with help.</li>
-          <li>Can explain how it works with a lot of help.</li>
-          <li>Can write and explain with a little help.</li>
-          <li>Can write and explain with no help</li>
+          <li>Can't write or explain how it works, after you answered both help questions.</li>
+          <li>Can explain how it works, after you answered both help questions.</li>
+          <li>Can write and explain how it works, after you answered one help question.</li>
+          <li>Can write and explain with no help.</li>
         </ol>
       </div>
   </li>
-  <li>We have begun another method to find the available moves for a Knight.<br>
-    Using pseudo code, complete the method:
+  <li class="quest"><span>(10-15 min)</span>We have begun another method to find the available moves for a Knight.<br>
+    Using pseudo code, complete the method (return an Array):
     <pre>availableMovesForKnight(){
-      <span>get knightCurrentLocation;
-        get howKnightMoves;
-          (knightCurrentLocation + howKnightMoves) push each X,Y to moveableSpotsArray;
-        forEach(moveable spot){
-            if(spot is occupied by a piece of mine)
-            remove from Array
+      <span>get knight's current location;
+        get how the knight moves;
+        is move on the board;
+          (knight's current location + how the knight moves) push each X,Y to moveable spots Array;
+            forEach(moveable spot){
+              if(spotOccupiedByMyPieces())
+              remove from moveable spots Array
           }
-          return Array
+          return moveable spots Array
         }</span>
     }</pre>
     <div class="gradingCriteria">
     <h3>(GRADING CRITERIA)</h3>
+    <h4>Ways to help</h4>
+    <p>What do you need to get started? <span>Get knight current location and how it moves.</span><br>
+    How could you improve your answer? <span>Go through all your pieces and check the XY against the given coordinates.</span><br>
+    What steps would you take after you get what you need? <span>Build an Array of possible spots.</span><br>
+    What if one or more of those spots are occupied? <span>Check to see if my pieces are occupying a spot.</span></p>
       <ol>
-        <li>Can't write or explain how it works, even with help.</li>
-        <li>Can explain how it works with a lot of help.</li>
-        <li>Can write and explain with a little help.</li>
-        <li>Can write and explain with no help</li>
+        <li>Couldn't complete or didn't work, with all help questions answered</li>
+        <li>Completed after being given all four help answers.</li>
+        <li>Completed after being given three help answers.</li>
+        <li>Completed after being given two help answers.</li>
+        <li>Completed after being given one help answer.</li>
+        <li>Completed with no help.</li>
       </ol>
     </div>
   </li>
+  <li class="quest"><span>(Extra credit: If time permits)</span>What would you change if the game had been checkers?<br>
+  <span>At a minimum, they should say, the method to define end game is "check-mate" vs "number of pieces remaining"<br>
+        If they made subclasses for each type of piece in Chess, then expect them to say they won't need those for checkers.</span></li>
 </ol>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
