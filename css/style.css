@@ -2,7 +2,6 @@ body { max-width:1000px; width: calc(100% - 20px); font-family: sans-serif; marg
 span { color: red; }
 ol, ol li {margin: 10px 0}
 .gradingCriteria { font-size:0.8em; background-color:#fafafa; border: 1px solid #ddd; padding: 0 20px; margin: 20px 0;}
-img {width: 400px;margin: 0 auto;display: block;}
 
 @media print {
     .quest {page-break-after: always;}
